@@ -21,7 +21,7 @@ public class CharacterSelector : MonoBehaviour
             characterList[i] = transform.GetChild(i).gameObject;
         }
         
-        // Toggle off their renderer
+        // Toggle off the renderer
         foreach (GameObject character in characterList)
         {
             character.SetActive(false);
@@ -35,7 +35,7 @@ public class CharacterSelector : MonoBehaviour
 
     public void ToggleSprite(string buttonName) 
     {
-        // Toggle off the current sprite
+        // Toggle off the current sprite renderer
         characterList[index].SetActive(false);
 
         //Check if right or left button was pressed
@@ -49,13 +49,13 @@ public class CharacterSelector : MonoBehaviour
                 index = 0;
         }
 
-        // Toggle on the current sprite
+        // Toggle on the current sprite renderer
         characterList[index].SetActive(true);
     }
 
     public void ConfirmButton() 
     {
-        PlayerPrefs.SetInt("Character Selected", index);
+        PlayerPrefs.SetInt("Character Selected", index); // Grab the index of the sprite selected
         SceneManager.LoadScene("Test Scene");
     }
 }
