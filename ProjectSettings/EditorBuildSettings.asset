@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Player Select Menu.unity
     guid: 08c3215b9b2eb4140ae745020e94c446
   - enabled: 1
-    path: Assets/Scenes/Test Scene.unity
+    path: Assets/Scenes/Land Generation Test.unity
     guid: a3d916abc6d6049fabe9079aed1d798d
   m_configObjects: {}
