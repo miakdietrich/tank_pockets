@@ -6,23 +6,26 @@ public class CursorController : MonoBehaviour
 {
 
 
-    public Texture2D cursorTexture;
+    public Texture2D inPlayCursor;
+    public Texture2D menuCursor;
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
 
     void Start()
     {
-        Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+        Cursor.SetCursor(inPlayCursor, hotSpot, cursorMode);
     }
 
-    // void OnMouseEnter()
-    // {
-    //     Cursor.SetCursor(null, Vector2.zero, cursorMode);
-    // }
+    void OnMouseEnter()
+    {
+       if (gameObject.tag == "UI") {
+            Cursor.SetCursor(menuCursor, hotSpot, cursorMode);
+       }
+    }
 
-    // void OnMouseExit()
-    // {
-    //     Cursor.SetCursor(null, Vector2.zero, cursorMode);
-    // }
+    void OnMouseExit()
+    {
+        Cursor.SetCursor(inPlayCursor, hotSpot, cursorMode);
+    }
 
 }
